@@ -1,0 +1,36 @@
+<%= form_for @archivo do |f| %>
+ 
+  <% if @archivo.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@archivo.errors.count, "error") %> prohibited
+        this file from being saved:
+      </h2>
+      <ul>
+        <% @archivo.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :Titulo %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :Tipo %><br>
+    <%= f.text_field :filetype %>
+  </p>
+   
+  <p>
+    <%= f.label :Fecha %><br>
+    <%= f.text_field :datefile %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
