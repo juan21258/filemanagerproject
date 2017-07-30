@@ -1,0 +1,24 @@
+<h1>Nuevo Archivo</h1>
+
+<%= form_for :archivo, url: archivos_path do |f| %>
+  <%-# titulo archivo -%>
+  <p>
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :title %>
+  </p>
+  <%-# tipo archivo -%>
+  <p>
+    <%= f.label :Tipo_archivo %><br>
+    <%= f.text_field :filetype %>
+  </p>
+  <%-# Fecha archivo -%>
+  <p>
+    <%= f.label :Fecha %><br>
+    <%= f.text_field :datefile %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Home', archivos_path %>
