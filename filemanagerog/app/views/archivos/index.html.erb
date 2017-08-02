@@ -2,21 +2,21 @@
 
 <h2>Lista de archivos</h2>
 
-<table>
+<table border="1">
   <tr>
-    <th>Title</th>
-    <th>Type</th>
-    <th>Date</th>
+    <th>Titulo</th>
+    <th>Tipo de Archivo</th>
+    <th>Fecha</th>
   </tr>
  
   <% @archivos.each do |archivo| %>
     <tr>
       <td><%= archivo.title %></td>
-      <td><%= archivo.filetype %></td>
+      <td align="center"><%= archivo.filetype %></td>
       <td><%= archivo.datefile %></td>
       <td><%= link_to 'Detalles', archivo_path(archivo) %></td>
       <td><%= link_to 'Editar', edit_archivo_path(archivo) %></td>
-      <td><%= link_to 'Destroy', archivo_path(archivo),
+      <td><%= link_to 'Eliminar', archivo_path(archivo),
               method: :delete,
               data: { confirm: '¿Deseas eliminar el arhivo?' } %></td>
     </tr>

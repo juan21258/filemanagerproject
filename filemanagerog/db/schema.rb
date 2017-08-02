@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170730000814) do
+ActiveRecord::Schema.define(version: 20170802035420) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "archivos", force: :cascade do |t|
     t.string "title"
@@ -20,4 +23,14 @@ ActiveRecord::Schema.define(version: 20170730000814) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "usuarios", force: :cascade do |t|
+    t.string "nombre"
+    t.string "password_digest"
+    t.bigint "archivo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["archivo_id"], name: "index_usuarios_on_archivo_id"
+  end
+
+  add_foreign_key "usuarios", "archivos"
 end
