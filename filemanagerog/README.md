@@ -1,24 +1,26 @@
-# README
+Aplicacion para el manejo de archivos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Instrucciones:
 
-Things you may want to cover:
+Clonar el repositorio: $ git clone https://github.com/juan21258/filemanagerproject.git
+Ir a la carpeta principal del proyecto e instalar las gemas: $ bundle install
+Crear las siguientes bases de datos en postgresql: archivosdb_development, archivosdb, archivosdb_test
+Migrar la base de datos: $ rake db:migrate
+Para realizar pruebas de la app (default http://localhost:3000/): $ rails server
 
-* Ruby version
+Requisitos:
 
-* System dependencies
+Rails => 5.1.2 Ruby => 2.4.0 PostgreSQL => 9.6.3
 
-* Configuration
+Informacion de la aplicacion
 
-* Database creation
+Operaciones CRUD
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+archivos     GET    /archivos(.:format)          archivos#index
+             POST   /archivos(.:format)          archivos#create
+new_archivo  GET    /archivos/new(.:format)      archivos#new
+edit_archivo GET    /archivos/:id/edit(.:format) archivos#edit
+     archivo GET    /archivos/:id(.:format)      archivos#show
+             PATCH  /archivos/:id(.:format)      archivos#update
+             PUT    /archivos/:id(.:format)      archivos#update
+             DELETE /archivos/:id(.:format)      archivos#destroy
