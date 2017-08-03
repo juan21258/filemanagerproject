@@ -43,7 +43,7 @@ end
 
 group :production, :test do
   # Use Postgresql as the database for Active Record
-  gem 'pg'
+  gem 'pg', '~> 0.21'
 end
 
 group :development do
