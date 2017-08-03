@@ -15,7 +15,9 @@ Rails => 5.1.2 Ruby => 2.4.0 PostgreSQL => 9.6.3
 
 Informacion de la aplicacion
 
-Operaciones CRUD
+Metodos REST
+
+Archivos
 
 archivos     GET    /archivos(.:format)          archivos#index
              POST   /archivos(.:format)          archivos#create
@@ -25,3 +27,18 @@ edit_archivo GET    /archivos/:id/edit(.:format) archivos#edit
              PATCH  /archivos/:id(.:format)      archivos#update
              PUT    /archivos/:id(.:format)      archivos#update
              DELETE /archivos/:id(.:format)      archivos#destroy
+
+Usuarios
+
+usuarios GET    /usuarios(.:format)          usuarios#index
+             POST   /usuarios(.:format)          usuarios#create
+ new_usuario GET    /usuarios/new(.:format)      usuarios#new
+edit_usuario GET    /usuarios/:id/edit(.:format) usuarios#edit
+     usuario GET    /usuarios/:id(.:format)      usuarios#show
+             PATCH  /usuarios/:id(.:format)      usuarios#update
+             PUT    /usuarios/:id(.:format)      usuarios#update
+             DELETE /usuarios/:id(.:format)      usuarios#destroy
+
+Sesiones
+
+sessions_new GET    /sessions/new(.:format)      sessions#new
