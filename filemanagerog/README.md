@@ -1,11 +1,12 @@
-Aplicacion para el manejo de archivos
+Aplicación para el manejo de archivos
 
 Instrucciones:
 
 Clonar el repositorio: $ git clone https://github.com/juan21258/filemanagerproject.git
 Ir a la carpeta principal del proyecto e instalar las gemas: $ bundle install
 Crear las siguientes bases de datos en postgresql: archivosdb_development, archivosdb, archivosdb_test
-Migrar la base de datos: $ rake db:migrate
+esto se hace mediante el comando: rake db:setup
+Migrar las bases de datos: $ rake db:migrate
 Para realizar pruebas de la app (default http://localhost:3000/): $ rails server
 
 Requisitos:
