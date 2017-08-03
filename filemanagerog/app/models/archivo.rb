@@ -1,5 +1,5 @@
 class Archivo < ApplicationRecord
-	has_many :usuarios
+	
 	validates :title, presence: true,
                     length: { minimum: 1 }
     validates :filetype, presence: true,

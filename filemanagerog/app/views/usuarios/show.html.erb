@@ -1,0 +1,13 @@
+<% provide(:title, @usuario.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="usuario_info">
+      <h1>
+        <%= gravatar_for @usuario %>
+        <%= @usuario.name %>
+        <br>
+        <%= link_to "Log out", logout_path, method: :delete %>
+      </h1>
+    </section>
+  </aside>
+</div>

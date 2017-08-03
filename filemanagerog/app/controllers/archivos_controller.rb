@@ -3,11 +3,7 @@ class ArchivosController < ApplicationController
 	http_basic_authenticate_with name: "admin", password: "secret",
 	 except: [:index, :create, :new, :show]
  
-  def index
-    @articles = Article.all
-  end
-
-	#Definiciond de metodos CRUD(Create, Read, Update, Delete)
+	#Definicion de metodos CRUD(Create, Read, Update, Delete)
 	def index
     	@archivos = Archivo.all
   	end
