@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     usuario = Usuario.find_by(email: params[:session][:email].downcase)
     if usuario && usuario.authenticate(params[:session][:password])
       log_in usuario
-      redirect_to usuario #esto se cambia a la pagina de crear archivo
+      redirect_to usuario
     else
       # Create an error message.
       flash[:danger] = 'Invalid email/password combination' # Not quite right!

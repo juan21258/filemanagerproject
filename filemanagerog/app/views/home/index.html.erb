@@ -1,7 +1,15 @@
 <h1>File manager app</h1>
 
-<%= link_to 'Archivos', controller: 'archivos' %>
-<br>
-<%= link_to 'Iniciar Sesion', login_path %>
-<br>
-<%= link_to "Registrarse", signup_path %>
+<table>
+	<tr>
+		<td>
+			<%= button_to "Archivos", archivos_path, :method => :get %>
+		</td>
+		<td>
+			<%= button_to "Iniciar Sesion", login_path, :method => :get %>
+		</td>
+		<td>
+			<%= button_to "Registrarse", signup_path, :method => :get %>
+		</td>
+	</tr>
+</table>

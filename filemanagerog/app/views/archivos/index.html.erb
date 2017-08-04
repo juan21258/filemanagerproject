@@ -1,6 +1,9 @@
-<%= link_to 'Nuevo archivo', new_archivo_path %>
-<%= link_to 'Volver', root_path %>
-
+<%= button_to "Nuevo Archivo", new_archivo_path, :method => :get %>
+<br>
+<%= link_to 'Inicio', root_path %>
+<br>
+<%= link_to "Perfil", current_usuario %>
+<br>
 <h2>Lista de archivos</h2>
 
 <table border="1">
