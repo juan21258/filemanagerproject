@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170803032145) do
   create_table "archivos", force: :cascade do |t|
     t.string "title"
     t.string "filetype"
-    t.integer "datefile"
+    t.string "datefile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

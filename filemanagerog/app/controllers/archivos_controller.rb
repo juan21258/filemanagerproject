@@ -1,8 +1,5 @@
 class ArchivosController < ApplicationController
-	#Seguridad o autenticacion
-	http_basic_authenticate_with name: "admin", password: "secret",
-	 except: [:index, :create, :new, :show]
- 
+	
 	#Definicion de metodos CRUD(Create, Read, Update, Delete)
 	def index
     @archivos = Archivo.all
@@ -27,7 +24,6 @@ class ArchivosController < ApplicationController
 
 	def create
 		@archivo = Archivo.new(archivo_params)
-
 		if @archivo.save
     	redirect_to @archivo
   	else
