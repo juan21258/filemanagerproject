@@ -2,7 +2,9 @@
 <br>
 <%= link_to 'Inicio', root_path %>
 <br>
+<% if logged_in? %>
 <%= link_to "Perfil", current_usuario %>
+<% end %>
 <br>
 <h2>Buscar archivo</h2>
 <%= form_tag(archivos_path, :method => "get", id: "search-form") do %>
@@ -18,7 +20,8 @@
 
 <h2>Lista de archivos</h2>
 
-<table border="1">
+<% if logged_in? %>
+  <table border="1">
   <tr>
     <th>Titulo</th>
     <th>Tipo de Archivo</th>
@@ -34,7 +37,25 @@
       <td><%= link_to 'Editar', edit_archivo_path(archivo) %></td>
       <td><%= link_to 'Eliminar', archivo_path(archivo),
               method: :delete,
-              data: { confirm: '¿Deseas eliminar el arhivo?' } %></td>
+              data: { confirm: '¿Deseas eliminar el archivo?' } %></td>
+    </tr>
+  <% end %>
+</table>  
+<% else %>
+  <table border="1">
+  <tr>
+    <th>Titulo</th>
+    <th>Tipo de Archivo</th>
+    <th>Fecha</th>
+  </tr>
+ 
+  <% @archivos.each do |archivo| %>
+    <tr>
+      <td><%= archivo.title %></td>
+      <td align="center"><%= archivo.filetype %></td>
+      <td><%= archivo.datefile %></td>
+      <td><%= link_to 'Detalles', archivo_path(archivo) %></td>      
     </tr>
   <% end %>
 </table>
+<% end %>

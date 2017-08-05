@@ -13,3 +13,7 @@
 		</td>
 	</tr>
 </table>
+
+<% if logged_in? %>
+<%= link_to "Perfil", current_usuario %>
+<% end %>
