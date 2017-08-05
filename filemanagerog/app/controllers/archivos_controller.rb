@@ -5,46 +5,51 @@ class ArchivosController < ApplicationController
  
 	#Definicion de metodos CRUD(Create, Read, Update, Delete)
 	def index
-    	@archivos = Archivo.all
-  	end
+    @archivos = Archivo.all
+    if params[:search]
+      @archivos = Archivo.search(params[:search]).order("created_at DESC")
+    else
+      @archivos = Archivo.all.order('created_at DESC')
+    end
+  end
 
 	def show
-    	@archivo = Archivo.find(params[:id])
-  	end
+    @archivo = Archivo.find(params[:id])
+  end
 
 	def new
 		@archivo = Archivo.new
 	end
 
 	def edit
-  		@archivo = Archivo.find(params[:id])
+  	@archivo = Archivo.find(params[:id])
 	end
 
 	def create
 		@archivo = Archivo.new(archivo_params)
 
 		if @archivo.save
-    		redirect_to @archivo
-  		else
-    		render 'new'
-  		end  		
+    	redirect_to @archivo
+  	else
+    	render 'new'
+  	end  		
 	end
 
 	def update
-  		@archivo = Archivo.find(params[:id])
+  	@archivo = Archivo.find(params[:id])
  
-  		if @archivo.update(archivo_params)
-    		redirect_to @archivo
-  		else
-    		render 'edit'
-  		end
+  	if @archivo.update(archivo_params)
+    	redirect_to @archivo
+  	else
+    	render 'edit'
+  	end
 	end
 
 	def destroy
-  		@archivo = Archivo.find(params[:id])
-  		@archivo.destroy
+  	@archivo = Archivo.find(params[:id])
+  	@archivo.destroy
  
-  		redirect_to archivo_path
+  	redirect_to archivo_path
 	end
 
 	#Acceso privado
